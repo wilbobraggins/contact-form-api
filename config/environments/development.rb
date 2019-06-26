@@ -34,14 +34,15 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.default_url_options = { host: 'localhost:3030' }
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    address:              'smtp.gmail.com',
-    port:                 587,
-    domain:               'gmail.com',
-    user_name:            ENV['GMAIL_EMAIL'],
-    password:             ENV['GMAIL_PASS'],
-    authentication:       'plain',
-    enable_starttls_auto: true
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+  :user_name => ENV["SENDGRID_USERNAME"],
+  :password => ENV["SENDGRID_PASSWORD"],
+  :domain => 'https://contact-alexis-bellydance.herokuapp.com/',
+  :address => 'smtp.sendgrid.net',
+  :port => "25",
+  :authentication => :plain,
+  :enable_starttls_auto => true
   }
 
 

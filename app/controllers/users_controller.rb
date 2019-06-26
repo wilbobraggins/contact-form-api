@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_param)
       if @user.save 
-        RecieveMailer.send_mail.deliver    
+        NotificationMailer.reply_added.deliver    
         render json: @user 
     end
   end
