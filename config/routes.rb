@@ -4,6 +4,6 @@ Rails.application.routes.draw do
 
   root to: "home#index"
   
-  post "user", controller: :users, action: :create
+  post "users", controller: :users, action: :create
 
 end
