@@ -3,4 +3,7 @@ Rails.application.routes.draw do
   resources :users
 
   root to: "home#index"
+  
+  post "user", controller: :users, action: :create
+
 end
