@@ -3,6 +3,6 @@ class NotificationMailer < ApplicationMailer
 
   def reply_added
     @user = User.last
-    mail(to: "william.marchek@gmail.com", subject: "a reply has been sent")
-  end
+    mail(to: ["william.marchek@gmail.com", "reale.alexis@gmail.com"], subject: "a reply has been sent")
+  end    
 end
